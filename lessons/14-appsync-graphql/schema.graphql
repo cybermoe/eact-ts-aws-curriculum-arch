@@ -1,0 +1,21 @@
+type Todo {
+  id: ID!
+  text: String!
+  done: Boolean!
+}
+type Query {
+  listTodos: [Todo!]!
+}
+type Mutation {
+  addTodo(text: String!): Todo!
+  toggleTodo(id: ID!): Todo!
+}
+type Subscription {
+  onTodoAdded: Todo!
+    @aws_subscribe(mutations: ["addTodo"])
+}
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}

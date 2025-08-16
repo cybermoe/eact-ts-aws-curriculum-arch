@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lesson 01 – Foundations</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 2rem; }
+      .card { border: 1px solid #ddd; padding: 1rem; border-radius: 8px; max-width: 640px; }
+      button { padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #888; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <h1>Foundations – HTML/CSS/JS</h1>
+    <div class="card">
+      <p id="msg">Click the button to change me.</p>
+      <button id="btn">Click me</button>
+    </div>
+    <script>
+      document.getElementById('btn').addEventListener('click', () => {
+        const msg = document.getElementById('msg')
+        msg.textContent = 'Hello from JavaScript!'
+        console.log('Button clicked. DOM updated.')
+      })
+    </script>
+  </body>
+</html>
